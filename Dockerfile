@@ -7,7 +7,7 @@ USER root
 
 ## packages
 RUN apt-get update -y
-RUN apt-get install curl openssh-server zsh -y
+RUN apt-get install curl zsh -y
 RUN apt-get install build-essential libssl-dev -y
 
 ## change root password
@@ -34,8 +34,3 @@ RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERS
 # Application Volumes
 USER devenv
 RUN mkdir /home/devenv/work
-
-# for ssh
-USER root
-EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
