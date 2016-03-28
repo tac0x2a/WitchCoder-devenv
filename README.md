@@ -17,9 +17,3 @@ $ docker-compose build
 $ docker-compose pull
 $ docker-compose up -d
 ```
-
-### for OSX
-```
-sudo chmod 0755 ./data/mongodb
-sudo chown $USER ./data/mongodb
-```
