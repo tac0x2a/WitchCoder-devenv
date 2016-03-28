@@ -29,8 +29,11 @@ ENV HOME /home/devenv
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 ENV NODE_VERSION 5.9.0
 ENV NVM_DIR $HOME/.nvm
-RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
+RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && npm install -g express
+RUN echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
 
 # Application Volumes
-USER devenv
 RUN mkdir /home/devenv/work
+
+# Run Application
+ENTRYPOINT cd /home/devenv/work && . ~/.nvm/nvm.sh && nvm use $NODE_VERSION && npm install && node app.js
