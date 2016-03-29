@@ -36,4 +36,4 @@ RUN echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
 RUN mkdir /home/devenv/work
 
 # Run Application
-ENTRYPOINT cd /home/devenv/work && . ~/.nvm/nvm.sh && nvm use $NODE_VERSION && npm install && node app.js
+ENTRYPOINT cd /home/devenv/work && . ~/.nvm/nvm.sh && nvm use $NODE_VERSION && npm install && npm start
