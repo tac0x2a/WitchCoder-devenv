@@ -3,13 +3,5 @@ dev:
   build: .
   ports:
     - "3000:3000"
-  links:
-    - mongo
   volumes:
     - ./data/work:/home/devenv/work
-
-mongo:
-  restart: always
-  image: mongo
-  # volumes:
-  #   - ./data/mongodb/db:/data/db
