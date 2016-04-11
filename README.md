@@ -1,10 +1,10 @@
-# judgesv_devenv
-Environment for developing online judge server.
+# WitchCoder-devenv
+Development environment for WhichCoder online judge platform.
 
-[View on DockerHub](https://hub.docker.com/r/tac0x2a/judgesv_devenv/).
+[View on DockerHub](https://hub.docker.com/r/tac0x2a/witchcoder-devenv/).
 
 
-## Creat Image
+## Create Image
 
 ```
 $ docker build .
