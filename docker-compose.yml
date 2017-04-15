@@ -4,4 +4,4 @@ dev:
   ports:
     - "3000:3000"
   volumes:
-    - ./data/whichcoder:/home/devenv/whichcoder
+    - ./data/witchcoder:/home/devenv/witchcoder

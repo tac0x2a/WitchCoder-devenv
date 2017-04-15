@@ -38,7 +38,8 @@ RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERS
 RUN echo ". ~/.nvm/nvm.sh" >> ~/.bashrc
 
 # Application Volumes
-RUN mkdir /home/devenv/whichcoder
+RUN mkdir /home/devenv/witchcoder
+VOLUME /home/devenv/witchcoder
 
 # Run Application
-ENTRYPOINT sudo service mongodb restart && cd /home/devenv/whichcoder && . ~/.nvm/nvm.sh && nvm use $NODE_VERSION && npm install && npm start
+ENTRYPOINT sudo service mongodb restart && cd /home/devenv/witchcoder && . ~/.nvm/nvm.sh && nvm use $NODE_VERSION && npm install && npm start
