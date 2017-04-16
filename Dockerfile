@@ -11,5 +11,11 @@ ENV HOME /home/devenv
 RUN mkdir /home/devenv/witchcoder
 VOLUME /home/devenv/witchcoder
 
+# Install docker
+RUN apk update && apk add docker=1.11.2-r1 --no-cache
+
 # Run Application
-ENTRYPOINT cd /home/devenv/witchcoder && npm start
+ENTRYPOINT cd /home/devenv/witchcoder/docker-judge && \
+           ash ./build.sh && \
+           cd /home/devenv/witchcoder && \
+           npm install && npm start

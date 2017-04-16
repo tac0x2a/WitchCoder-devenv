@@ -5,6 +5,7 @@ dev:
     - "3000:3000"
   volumes:
     - ./witchcoder:/home/devenv/witchcoder
+    - /var/run/docker.sock:/var/run/docker.sock
   links:
     - mongo:mongodb
 
