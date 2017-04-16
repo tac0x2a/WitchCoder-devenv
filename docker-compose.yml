@@ -5,3 +5,14 @@ dev:
     - "3000:3000"
   volumes:
     - ./witchcoder:/home/devenv/witchcoder
+  links:
+    - mongo:mongodb
+
+  environment:
+    - MONGODB_HOST=mongodb
+
+mongo:
+  restart: always
+  image: mongo
+  volumes:
+    - ./mongodb:/data/db
